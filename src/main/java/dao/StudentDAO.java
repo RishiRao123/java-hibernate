@@ -129,7 +129,7 @@ public class StudentDAO {
     }
 
     // get student by course
-    public List<Student> getByCourse(String course) {
+    public List<Student> getStudentsByCourse(String course) {
 
         try(Session session = HibernateUtil.getSessionFactory().openSession()) {
 
