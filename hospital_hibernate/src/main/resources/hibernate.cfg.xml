@@ -9,7 +9,7 @@
         <!--- JDBC -->
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="hibernate.connection.url">
-            jdbc:mysql://localhost:3306/hospital_db1?useSSL=false&amp;serverTimezone=UTC
+            jdbc:mysql://localhost:3306/hospital_db1
         </property>
 
         <property name="hibernate.connection.username">root</property>
@@ -38,7 +38,8 @@
 
         <mapping class="org.raoamigos.entity.Patient" />
         <mapping class="org.raoamigos.entity.MedicalRecord" />
-
+        <mapping class="org.raoamigos.entity.Department" />
+        <mapping class="org.raoamigos.entity.Doctor" />
 
     </session-factory>
 </hibernate-configuration>
