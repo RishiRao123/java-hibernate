@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.raoamigos.dao.DepartmentDAO;
 import org.raoamigos.dao.DepartmentDAOImp;
+import org.raoamigos.dao.DoctorDAOImp;
 import org.raoamigos.entity.Department;
 import org.raoamigos.entity.Doctor;
 import org.raoamigos.util.HibernateUtil;
@@ -111,6 +112,11 @@ public class CRUDTest2 {
 
         session.close();
 
+        DoctorDAOImp docDao = new DoctorDAOImp();
+        List<Doctor> doctors = docDao.getAllDoctors();
+        for(Doctor d : doctors) {
+            System.out.println(d);
+        }
         System.out.println("\n✔ Task 2 completed.");
 
     }

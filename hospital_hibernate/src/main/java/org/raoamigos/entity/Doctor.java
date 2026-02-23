@@ -60,4 +60,9 @@ public class Doctor {
     public void setDepartment(Department department) {
         this.department = department;
     }
+
+    @Override
+    public String toString() {
+        return "Doctor{id=" + id + ", name='" + name + "'}";
+    }
 }
