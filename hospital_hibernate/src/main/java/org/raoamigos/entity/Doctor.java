@@ -3,6 +3,9 @@ package org.raoamigos.entity;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "doctors")
 public class Doctor {
@@ -23,7 +26,19 @@ public class Doctor {
     @JoinColumn(name = "department_id")
     private Department department;
 
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "doctor_id")
+    private List<Appointment> appointments = new ArrayList<>();
+
     public Doctor() {}
+
+    public List<Appointment> getAppointments() {
+        return appointments;
+    }
+
+    public void addAppointment(Appointment appointment) {
+        this.appointments.add(appointment);
+    }
 
     public Long getId() {
         return id;

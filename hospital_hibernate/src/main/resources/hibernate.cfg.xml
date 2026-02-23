@@ -40,6 +40,7 @@
         <mapping class="org.raoamigos.entity.MedicalRecord" />
         <mapping class="org.raoamigos.entity.Department" />
         <mapping class="org.raoamigos.entity.Doctor" />
+        <mapping class="org.raoamigos.entity.Appointment" />
 
     </session-factory>
 </hibernate-configuration>
