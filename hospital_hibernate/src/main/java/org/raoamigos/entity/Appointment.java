@@ -20,7 +20,23 @@ public class Appointment {
 
     private String reason;
 
+    public Long getId() {
+        return id;
+    }
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = true)
+    @JoinColumn(name = "prescription_id")
+    private Prescription prescription;
+
     public Appointment() {}
+
+    public Prescription getPrescription() {
+        return prescription;
+    }
+
+    public void setPrescription(Prescription prescription) {
+        this.prescription = prescription;
+    }
 
     public String getReason() {
         return reason;

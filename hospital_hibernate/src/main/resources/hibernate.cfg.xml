@@ -41,6 +41,7 @@
         <mapping class="org.raoamigos.entity.Department" />
         <mapping class="org.raoamigos.entity.Doctor" />
         <mapping class="org.raoamigos.entity.Appointment" />
+        <mapping class="org.raoamigos.entity.Prescription" />
 
     </session-factory>
 </hibernate-configuration>
