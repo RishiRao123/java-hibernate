@@ -7,7 +7,6 @@ import org.raoamigos.entity.Patient;
 import org.raoamigos.util.HibernateUtil;
 
 import java.time.LocalDate;
-import java.util.List;
 
 public class CRUDTest5 {
 
