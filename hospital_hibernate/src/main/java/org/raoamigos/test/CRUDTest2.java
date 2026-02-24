@@ -95,7 +95,6 @@ public class CRUDTest2 {
 
         System.out.println("Dr. Smith transferred to Neurology.");
 
-        // =========================================
         System.out.println("\n---- JPQL QUERY ----");
 
         session = HibernateUtil.getSessionFactory().openSession();
@@ -117,7 +116,7 @@ public class CRUDTest2 {
         for(Doctor d : doctors) {
             System.out.println(d);
         }
-        System.out.println("\n✔ Task 2 completed.");
+
 
     }
 }

@@ -55,6 +55,5 @@ public class CRUDTest1 {
         dao.delete(savedId);
         System.out.println("Patient deleted. MedicalRecord should also be deleted.");
 
-        System.out.println("\n✔ Task 1 operations completed.");
     }
 }

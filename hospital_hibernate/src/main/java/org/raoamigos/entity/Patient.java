@@ -4,6 +4,8 @@ package org.raoamigos.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "patients")
@@ -30,6 +32,9 @@ public class Patient {
     @JoinColumn(name = "med_record_id")
     private MedicalRecord medicalRecord;
 
+    @ManyToMany(mappedBy = "patients")
+    private List<Doctor> doctors = new ArrayList<>();
+
     public Patient() {
 
     }
@@ -39,6 +44,18 @@ public class Patient {
         this.dob = dob;
         this.bloodGroup = bloodGroup;
         this.phone = phone;
+    }
+
+    public List<Doctor> getDoctors() {
+        return doctors;
+    }
+
+    public void setDoctor(Doctor doctor) {
+        this.doctors.add(doctor);
+    }
+
+    public int getAge() {
+        return LocalDate.now().getYear() - this.dob.getYear();
     }
 
     public Long getId() { return id; }

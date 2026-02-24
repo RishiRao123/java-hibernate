@@ -30,6 +30,10 @@ public class Doctor {
     @JoinColumn(name = "doctor_id")
     private List<Appointment> appointments = new ArrayList<>();
 
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
+    @JoinTable(name = "patient_doctor", joinColumns = @JoinColumn(name = "doctor_id"), inverseJoinColumns = @JoinColumn(name = "patient_id"))
+    private List<Patient> patients = new ArrayList<>();
+
     public Doctor() {}
 
     public List<Appointment> getAppointments() {
@@ -38,6 +42,21 @@ public class Doctor {
 
     public void addAppointment(Appointment appointment) {
         this.appointments.add(appointment);
+    }
+
+    public void addPatient(Patient patient) {
+        this.patients.add(patient);
+        patient.getDoctors().add(this);
+    }
+
+    public List<Patient> getPatients() {
+        return patients;
+    }
+
+    public void removePatient(Patient patient) {
+       if(patients.remove(patient)) {
+           patient.getDoctors().remove(this);
+       }
     }
 
     public Long getId() {
